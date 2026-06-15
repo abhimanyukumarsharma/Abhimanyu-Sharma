@@ -266,25 +266,74 @@ h1 .accent{color:var(--violet2)}
   border-radius:50%;background:var(--violet);flex-shrink:0;
 }
 
-/* ── EXPERIENCE ── */
-.exp-list{display:flex;flex-direction:column}
-.exp-item{
-  display:grid;grid-template-columns:130px 1fr;
-  gap:2rem;padding:2rem 0;
-  border-bottom:1px solid var(--border);
+/* ── EXPERIENCE CARDS ── */
+.exp-list{display:flex;flex-direction:column;gap:1.5rem}
+.exp-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
 }
-.exp-item:last-child{border-bottom:none}
-.exp-date{font-size:.8rem;color:var(--muted);font-weight:500;padding-top:.15rem}
+.exp-card-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:1.5rem 1.75rem;
+  background:var(--slate);border-bottom:1px solid var(--border);
+  gap:1rem;flex-wrap:wrap;
+}
+.exp-card-left{display:flex;align-items:center;gap:1rem}
+.exp-company-badge{
+  width:44px;height:44px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--violet),#4B2FCC);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--grotesk);font-size:.72rem;font-weight:700;
+  color:#fff;letter-spacing:.02em;
+}
 .exp-role{
-  font-family:var(--grotesk);font-size:1.05rem;font-weight:600;
-  color:var(--text);margin-bottom:.2rem;letter-spacing:-.01em;
+  font-family:var(--grotesk);font-size:1rem;font-weight:600;
+  color:var(--text);letter-spacing:-.01em;margin-bottom:.2rem;
 }
-.exp-org{
-  font-size:.875rem;color:var(--violet);font-weight:500;
-  margin-bottom:.6rem;
+.exp-org{font-size:.825rem;color:var(--violet);font-weight:500}
+.exp-card-right{
+  display:flex;flex-direction:column;align-items:flex-end;gap:.3rem;
+  flex-shrink:0;
 }
-.exp-desc{font-size:.875rem;color:#444;line-height:1.7;margin-bottom:.75rem}
-.exp-metrics{display:flex;gap:.5rem;flex-wrap:wrap}
+.exp-tenure{
+  font-family:var(--grotesk);font-size:.8rem;font-weight:600;
+  color:var(--text);white-space:nowrap;
+}
+.exp-type{
+  font-size:.68rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);
+}
+.exp-context{
+  font-size:.9rem;color:#444;line-height:1.75;
+  padding:1.25rem 1.75rem;
+  border-bottom:1px solid var(--border);
+  background:#FAFAFA;
+}
+.exp-projects{padding:1.25rem 1.75rem;display:flex;flex-direction:column;gap:1.75rem}
+.exp-project{padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
+.exp-project:last-child{padding-bottom:0;border-bottom:none}
+.exp-project-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+.exp-project-icon{font-size:1.1rem;line-height:1}
+.exp-project-title{
+  font-family:var(--grotesk);font-size:.95rem;font-weight:600;
+  color:var(--text);letter-spacing:-.01em;
+}
+.exp-desc{font-size:.875rem;color:#444;line-height:1.75;margin-bottom:.75rem}
+.exp-desc:last-of-type{margin-bottom:0}
+.exp-bullets{
+  list-style:none;display:flex;flex-direction:column;gap:.65rem;
+  margin:.75rem 0;padding-left:.1rem;
+}
+.exp-bullets li{
+  font-size:.875rem;color:#444;line-height:1.7;
+  padding-left:1.1rem;position:relative;
+}
+.exp-bullets li::before{
+  content:'';position:absolute;left:0;top:.6em;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--violet);flex-shrink:0;
+}
+.exp-metrics{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.875rem}
 .mpill{
   font-size:.72rem;font-weight:600;
   background:var(--violet-lt);color:#4B2FCC;
@@ -346,7 +395,10 @@ footer a:hover{color:var(--violet)}
   .stats-band{padding:1.5rem 1.25rem}
   .stats-inner{gap:1.25rem;justify-content:center}
   .section{padding:4rem 1.25rem}
-  .exp-item{grid-template-columns:1fr;gap:.25rem}
+  .exp-card-header{flex-direction:column}
+  .exp-card-right{align-items:flex-start}
+  .exp-projects{padding:1rem 1.25rem}
+  .exp-context{padding:1rem 1.25rem}
   .contact-section{padding:4rem 1.25rem}
   footer{padding:1.25rem}
 }
@@ -707,68 +759,324 @@ a:focus-visible,button:focus-visible{
 
   <div class="exp-list">
 
-    <div class="exp-item">
-      <span class="exp-date">2022 – Present</span>
-      <div>
-        <p class="exp-role">Product Manager — Customer Onboarding & Shipment Booking</p>
-        <p class="exp-org">FedEx · India, Middle East, Singapore, Africa</p>
-        <p class="exp-desc">
-          End-to-end product ownership of the customer onboarding funnel and shipment booking flow across four regions. Owned the complete customer journey from first registration through to successful package booking — mapping frontend UI screens, defining backend API contracts, coordinating with engineering on service reliability, and running A/B experiments to remove drop-off points. Improved onboarding conversion by 25% through journey redesign and reduced page load time through frontend performance work. Delivered $9M in logistics optimisation by rearchitecting pickup assignment logic in the booking backend.
-        </p>
-        <div class="exp-metrics">
-          <span class="mpill">25% conversion lift</span>
-          <span class="mpill">$9M saved</span>
-          <span class="mpill">Full-stack product ownership</span>
-          <span class="mpill">4 regions</span>
-          <span class="mpill">Frontend + backend</span>
+    <!-- ── FedEx ── -->
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-card-left">
+          <div class="exp-company-badge">FX</div>
+          <div>
+            <p class="exp-role">Senior Product Manager</p>
+            <p class="exp-org">FedEx · US, Canada &amp; 57 Jurisdictions</p>
+          </div>
         </div>
+        <div class="exp-card-right">
+          <span class="exp-tenure">Oct 2023 – Present</span>
+          <span class="exp-type">Full-time</span>
+        </div>
+      </div>
+
+      <p class="exp-context">
+        Owned three concurrent product mandates at FedEx — the end-to-end customer onboarding and shipment booking platform, an AI-powered e-commerce order ingestion system, and an ML-driven route optimization engine. Worked across 2 scrum teams comprising 18 engineers and 2 data scientists, operating across the US, Canada, and 57 global jurisdictions processing 1.5M+ daily events.
+      </p>
+
+      <div class="exp-projects">
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">📦</span>
+            <h4 class="exp-project-title">Customer Onboarding &amp; Shipment Booking Platform</h4>
+          </div>
+          <p class="exp-desc">Owned the complete customer journey from first-time registration through to a successfully booked shipment — covering every touchpoint across frontend UI screens, backend API contracts, payment flows, and post-booking confirmation. Worked directly with UX designers to map and instrument the funnel, identified high drop-off screens through analytics, and ran iterative experiments to eliminate friction at each stage.</p>
+          <p class="exp-desc">Redesigned the authorization, retry, and reconciliation logic underpinning the payment layer in partnership with the payments engineering squad — improving payment success rates by 28%. Drove an overall onboarding conversion improvement of ~25% through a combination of UI simplification, progressive disclosure of fields, and backend latency reduction.</p>
+          <ul class="exp-bullets">
+            <li>Defined and maintained the product roadmap for onboarding and booking across quarterly planning cycles, aligning engineering, design, compliance, and ops stakeholders</li>
+            <li>Owned backend API specifications for shipment creation, label generation, rate card lookup, and address validation services</li>
+            <li>Established product KPIs across funnel conversion, payment success rate, time-to-first-booking, and API reliability — tracked via dashboards updated weekly</li>
+            <li>Coordinated regulatory compliance requirements across 57 jurisdictions, embedding customs, tax, and address validation rules into the booking flow without increasing user friction</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">~25% conversion lift</span>
+            <span class="mpill">28% payment success lift</span>
+            <span class="mpill">1.5M+ daily events</span>
+            <span class="mpill">57 jurisdictions</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🤖</span>
+            <h4 class="exp-project-title">E-commerce Order Ingestion System — NLP + Fine-tuned AI</h4>
+          </div>
+          <p class="exp-desc">Designed and launched a system that automatically ingests order booking data from 3 major US-based e-commerce platforms via REST APIs and webhooks — processing 25,000+ orders per day and creating corresponding FedEx shipments without manual intervention. The core product challenge was translating the unstructured, free-text "notes" field that e-commerce platforms pass alongside orders into actionable shipment parameters.</p>
+          <p class="exp-desc">To solve this, I led the integration of a fine-tuned NLP model — built on a pre-trained language model retrained on a domain-specific dataset of e-commerce order notes — capable of extracting structured intent (delivery frequency, handling instructions, access requirements, time-window preferences) from highly varied, informal customer language. These extracted signals were then used to dynamically configure shipment booking frequencies and routing flags per order, without requiring any changes to the upstream e-commerce platform.</p>
+          <ul class="exp-bullets">
+            <li>Defined the API integration specification for each e-commerce platform, including webhook event schemas, retry logic, and idempotency handling</li>
+            <li>Led the data collection and labelling process for the NLP fine-tuning dataset — working with ops and data science to define entity types, annotation guidelines, and model evaluation criteria</li>
+            <li>Owned the end-to-end product launch: integration testing, rollout sequencing across platforms, fallback logic for low-confidence NLP extractions, and operator review queues for edge cases</li>
+            <li>Established model monitoring KPIs — extraction accuracy, low-confidence rate, and downstream shipment exception rate — reviewed fortnightly with data science</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">25,000+ orders/day</span>
+            <span class="mpill">3 platform integrations</span>
+            <span class="mpill">Fine-tuned NLP</span>
+            <span class="mpill">REST API + webhooks</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🗺️</span>
+            <h4 class="exp-project-title">ML Route Optimization Engine — Event-Aware Dynamic Re-sequencing</h4>
+          </div>
+          <p class="exp-desc">Led product definition and cross-functional coordination for a machine learning-driven route optimization engine covering FedEx pickup and delivery operations across the US and Canada. The core problem: on-call pickups were historically appended to the end of driver routes regardless of their geographic position — creating unnecessary distance, fuel cost, and delivery delays. The ML engine replaced this with dynamic re-sequencing, inserting each new pickup into the optimal position in the existing route based on geolocation proximity and time-window constraints of already-committed stops.</p>
+          <p class="exp-desc">A core architectural decision I championed was making the system event-aware from the ground up — not a static optimizer, but one that could ingest any structured external disruption signal and translate it into proactive route adjustments before disruption occurred. The engine recognised three disruption categories: scheduled sporting and civic events (predictable congestion zones with known time windows), demand surge events (volume spikes concentrated in specific zip codes), and infrastructure constraints (permit-based closures, road works). This made the system reusable across the annual event calendar without retraining the model for each new event.</p>
+          <p class="exp-desc">Events integrated into production:</p>
+          <ul class="exp-bullets">
+            <li><strong>FIFA World Cup 2026</strong> — Published match schedules ingested for all US host cities (Dallas, LA, NYC, Miami, Seattle, Boston, Philadelphia, Kansas City, San Francisco). Pickups within a defined radius of each stadium were automatically redistributed to non-congestion time windows, and reassigned to drivers positioned outside the expected congestion zone ahead of each match</li>
+            <li><strong>Super Bowl LIX — New Orleans, Feb 2025</strong> — French Quarter and Superdome-adjacent routes restructured for the full week prior to game day. Pickup density in high-footfall zones was shifted to early morning windows (before 9am) to execute before street closures and security perimeters activated — reducing rerouting exceptions on game day by eliminating the problem upstream</li>
+            <li><strong>Thanksgiving / Black Friday</strong> — Nationwide surge signal built from 3 years of historical volume data and real-time retail partner demand forecasts. The engine dynamically rebalanced residential pickup density across fulfilment-heavy zip codes in the 72-hour pre-holiday window, pre-positioning driver capacity ahead of the spike</li>
+            <li><strong>Mardi Gras — New Orleans, March 2025</strong> — Multi-week street closure schedule ingested directly from city permit data via a structured feed. Affected route segments were automatically flagged and rerouted from the day the closure calendar was published — weeks in advance rather than reactively on the day</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">~30% route cost reduction</span>
+            <span class="mpill">10–15% on-time improvement</span>
+            <span class="mpill">Event-aware ML</span>
+            <span class="mpill">US &amp; Canada</span>
+            <span class="mpill">3 disruption signal types</span>
+            <span class="mpill">Schedule-agnostic architecture</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="exp-item">
-      <span class="exp-date">2020 – 2022</span>
-      <div>
-        <p class="exp-role">Compliance Officer / Senior Manager — FinCrime (1LoD)</p>
-        <p class="exp-org">CoinSwitch · 15M+ customer crypto platform</p>
-        <p class="exp-desc">
-          Built and led the compliance function from scratch on India's largest crypto platform. Ran an 18-person team, owned FIU-IND and RBI regulatory relationships, and drove KYC/AML product decisions. Cut onboarding time from 96s to 42s and CAC from ₹28 to ₹9 through ML-assisted identity verification and funnel redesign. Reduced drop-off by 64%.
-        </p>
-        <div class="exp-metrics">
-          <span class="mpill">96s → 42s onboarding</span>
-          <span class="mpill">₹28 → ₹9 CAC</span>
-          <span class="mpill">64% drop-off reduction</span>
-          <span class="mpill">15M+ customers</span>
+    <!-- ── CoinSwitch ── -->
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-card-left">
+          <div class="exp-company-badge" style="background:linear-gradient(135deg,#F7931A,#FF6B35)">CS</div>
+          <div>
+            <p class="exp-role">Senior Product Manager — Identity, Compliance &amp; FinCrime</p>
+            <p class="exp-org">CoinSwitch · India's largest crypto exchange · Bengaluru</p>
+          </div>
         </div>
+        <div class="exp-card-right">
+          <span class="exp-tenure">Oct 2021 – Oct 2023</span>
+          <span class="exp-type">Full-time</span>
+        </div>
+      </div>
+
+      <p class="exp-context">
+        Held a deliberate dual mandate — Compliance Officer on paper (carrying regulatory accountability to FIU-IND and RBI) and Compliance Product Manager in practice (owning the full product lifecycle for Identity, KYC, and Financial Crime systems). This combination meant I was simultaneously accountable to regulators for outcomes and to the product organisation for delivering the systems that produced those outcomes. Directly managed a 14-person cross-functional team spanning KYC operations, AML analysts, and product specialists across a multi-asset platform serving millions of users across crypto, equities, mutual funds, US stocks, and fixed deposits.
+      </p>
+
+      <div class="exp-projects">
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🔐</span>
+            <h4 class="exp-project-title">KYC Platform Redesign — DIGILOCKER Integration</h4>
+          </div>
+          <p class="exp-desc">The existing KYC flow required users to manually upload identity documents, wait for async verification, and frequently re-submit due to image quality failures — creating a 96-second average completion time with severe drop-off. I led the end-to-end product redesign integrating DIGILOCKER, India's government-backed digital document infrastructure, enabling real-time verified document fetch directly from the issuing authority.</p>
+          <ul class="exp-bullets">
+            <li>Owned the full product specification and engineering coordination for the DIGILOCKER API integration — handling consent flows, document type mapping, verification status webhooks, and failure fallbacks</li>
+            <li>Redesigned the onboarding UI in partnership with design to eliminate unnecessary fields and reorder the funnel based on drop-off data — reducing time-to-completion from 96s to 42s</li>
+            <li>Drove a 64% reduction in onboarding drop-off and lowered CAC from ₹28 to ₹9 — without any relaxation of KYC controls or increase in false-accept rate</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">96s → 42s</span>
+            <span class="mpill">64% drop-off reduction</span>
+            <span class="mpill">₹28 → ₹9 CAC</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🛡️</span>
+            <h4 class="exp-project-title">In-house AML Engine &amp; Customer Risk Rating (CRR) System</h4>
+          </div>
+          <p class="exp-desc">Replaced a costly third-party AML vendor with an in-house transaction monitoring and Customer Risk Rating engine — delivering $130K in annual savings while gaining full control over detection logic and threshold calibration. The CRR model combined two layers: a static rules layer applied at onboarding (based on customer-declared source of funds, occupation category, and expected transaction behaviour) and a dynamic behavioural monitoring layer that continuously updated risk scores based on observed platform activity, flagging deviations from stated patterns as escalating risk signals.</p>
+          <ul class="exp-bullets">
+            <li>Defined the full product specification for the rules engine, CRR model inputs, risk score bands, and automated alert routing logic</li>
+            <li>Worked with data science to define behavioural deviation thresholds — establishing what constituted a statistically meaningful departure from a customer's declared behaviour profile</li>
+            <li>Owned the alert management workflow — from alert generation through analyst assignment, investigation, SAR/STR filing decision, and regulatory reporting to FIU-IND</li>
+            <li>Built monitoring dashboards on Grafana tracking alert volume, false positive rate, time-to-action, and detection coverage — reviewed weekly with the AML team</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">$130K annual savings</span>
+            <span class="mpill">Vendor replacement</span>
+            <span class="mpill">CRR + TM engine</span>
+            <span class="mpill">FIU-IND reporting</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">⚖️</span>
+            <h4 class="exp-project-title">FIU-IND VDA Regulation Response — First-Mover GTM</h4>
+          </div>
+          <p class="exp-desc">When the Government of India gazetted the 2023 FIU-IND Virtual Digital Asset regulations — bringing crypto platforms under the Prevention of Money Laundering Act for the first time — I led CoinSwitch's end-to-end product and compliance response. The regulations required platforms to re-architect onboarding, sanctions screening, transaction monitoring, and regulatory reporting workflows within a defined window. I coordinated across product, engineering, legal, and ops to deliver a compliant platform ahead of the regulatory deadline and ahead of competitors, securing a first-mover advantage in the post-regulation market.</p>
+          <ul class="exp-bullets">
+            <li>Mapped every regulatory requirement to a product change — onboarding re-consent flows, enhanced due diligence triggers, updated STR/SAR filing procedures, and FIU-IND registration</li>
+            <li>Owned the regulatory submission and ongoing engagement with FIU-IND as the designated Principal Officer</li>
+            <li>Delivered the full compliance re-architecture within the regulatory deadline with zero enforcement action</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">FIU-IND VDA first-mover</span>
+            <span class="mpill">PMLA compliance</span>
+            <span class="mpill">Principal Officer</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🚀</span>
+            <h4 class="exp-project-title">Lemonn — 0→1 Mobile Brokerage Launch</h4>
+          </div>
+          <p class="exp-desc">Owned the product launch of Lemonn, CoinSwitch's standalone mobile brokerage app targeting first-time retail investors — a 0→1 build spanning onboarding, payments and funding, and trade execution. Coordinated across engineering, design, data, legal, and SEBI compliance squads to define and ship the MVP. Onboarded 20,000 users within the first 3 months of launch.</p>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">0→1 launch</span>
+            <span class="mpill">20K users in 3 months</span>
+            <span class="mpill">Onboarding + payments + trading</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="exp-item">
-      <span class="exp-date">2018 – 2020</span>
-      <div>
-        <p class="exp-role">AVP — AML & Financial Crime</p>
-        <p class="exp-org">Wells Fargo</p>
-        <p class="exp-desc">
-          Automated AML reporting workflows saving $600K/month. Built ML-assisted transaction monitoring triage reducing false positive review burden. Owned $130K AML automation delivery.
-        </p>
-        <div class="exp-metrics">
-          <span class="mpill">$600K/month saved</span>
-          <span class="mpill">$130K AML automation</span>
-          <span class="mpill">ML triage</span>
+    <!-- ── Wells Fargo ── -->
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-card-left">
+          <div class="exp-company-badge" style="background:linear-gradient(135deg,#D71E28,#8B0000)">WF</div>
+          <div>
+            <p class="exp-role">Product Manager — Commercial Banking Controls &amp; Regulatory Reporting</p>
+            <p class="exp-org">Wells Fargo · Hyderabad, India</p>
+          </div>
         </div>
+        <div class="exp-card-right">
+          <span class="exp-tenure">Feb 2021 – Sep 2021</span>
+          <span class="exp-type">Full-time</span>
+        </div>
+      </div>
+
+      <p class="exp-context">
+        Led product delivery for two parallel workstreams within Wells Fargo's global commercial banking division — regulatory reporting automation and the customer portal experience. Worked across risk, compliance, engineering, and operations stakeholders across India and the US.
+      </p>
+
+      <div class="exp-projects">
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">📊</span>
+            <h4 class="exp-project-title">Regulatory Reporting Automation — Data Dictionary &amp; Control Layer</h4>
+          </div>
+          <p class="exp-desc">The commercial banking division produced approximately 6,000 regulatory reports spanning Basel capital adequacy, FR Y-series Federal Reserve filings, SAR/STR submissions, FinRep, CoRep, and EMIR trade reporting — each maintained separately with inconsistent field definitions, creating reconciliation overhead and audit risk. I led the product definition for a unified data dictionary that standardised field-level definitions, ownership, and lineage across all report types — eliminating manual reconciliation and creating a single source of truth for regulatory data.</p>
+          <ul class="exp-bullets">
+            <li>Mapped every field across all 6,000 reports to a canonical data definition — covering field name, data type, regulatory source, upstream system owner, and transformation logic</li>
+            <li>Defined the control layer specification — automated checks flagging missing, out-of-range, or inconsistent values before report submission</li>
+            <li>Projected to deliver ~$200K in monthly cost savings through elimination of manual reconciliation and rework from submission errors</li>
+            <li>Strengthened audit traceability — each report field traceable end-to-end from source system to submission</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">~6,000 regulatory reports</span>
+            <span class="mpill">~$200K/month projected savings</span>
+            <span class="mpill">Basel · FR Y-series · SAR · FinRep · CoRep · EMIR</span>
+          </div>
+        </div>
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">💻</span>
+            <h4 class="exp-project-title">Commercial Banking Portal — Login &amp; Profile UX Redesign</h4>
+          </div>
+          <p class="exp-desc">Owned the UI/UX redesign of the global commercial banking portal's login and customer profile experience — working across risk controls, compliance, and engineering to balance regulatory access requirements (MFA, session management, entitlement controls) with a materially improved customer experience for corporate banking clients.</p>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">UI/UX ownership</span>
+            <span class="mpill">Global commercial banking</span>
+            <span class="mpill">MFA · Access controls</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="exp-item">
-      <span class="exp-date">2014 – 2018</span>
-      <div>
-        <p class="exp-role">Senior Consultant / Analyst</p>
-        <p class="exp-org">Deloitte USI · PwC</p>
-        <p class="exp-desc">
-          Advised financial services clients on risk and FinCrime compliance frameworks across Big 4 advisory. Reduced red-alert incidents by 55% through systematic control redesign at Deloitte.
-        </p>
-        <div class="exp-metrics">
-          <span class="mpill">55% red-alert reduction</span>
-          <span class="mpill">Big 4 · FSI advisory</span>
+    <!-- ── Deloitte ── -->
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-card-left">
+          <div class="exp-company-badge" style="background:linear-gradient(135deg,#86BC25,#0076A8)">DA</div>
+          <div>
+            <p class="exp-role">Senior Solution Advisor — Financial Crime &amp; Risk Advisory</p>
+            <p class="exp-org">Deloitte Advisory · Hyderabad, India</p>
+          </div>
+        </div>
+        <div class="exp-card-right">
+          <span class="exp-tenure">Jan 2017 – Jan 2021</span>
+          <span class="exp-type">Full-time · 4 years</span>
+        </div>
+      </div>
+
+      <p class="exp-context">
+        Advised banks and financial institutions across India and cross-border payments engagements on AML, KYC, and financial crime programme design over a 4-year tenure. Operated as the product lead for an internal workflow and case-management tool used across client engagements — defining requirements that directly prefigured the compliance product architecture later built at CoinSwitch.
+      </p>
+
+      <div class="exp-projects">
+
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">🔎</span>
+            <h4 class="exp-project-title">AML Detection Engine Design &amp; Alert Triage Workflow</h4>
+          </div>
+          <p class="exp-desc">Designed rule-based transaction monitoring detection engines generating real-time suspicious activity alerts across multiple banking clients — establishing the detection rule vocabulary, threshold calibration methodology, and tuning playbooks used across engagements. Drove a 55% reduction in red-alert incidents over a 6-month period through targeted risk threshold recalibration — systematically reducing false positive transaction monitoring alerts by retuning detection rules against validated historical alert data, without increasing miss rates on genuine suspicious activity.</p>
+          <ul class="exp-bullets">
+            <li>Defined alert triage, investigation, and SAR/STR packaging workflows for the internal case management tool used across client teams</li>
+            <li>Owned API integrations with external data providers for real-time sanctions screening (OFAC, UN, EU), adverse media monitoring, and identity verification</li>
+            <li>Built the false positive reduction framework — a structured approach to threshold recalibration that balanced regulatory detection obligations against investigator capacity</li>
+          </ul>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">55% red-alert reduction</span>
+            <span class="mpill">6-month intervention</span>
+            <span class="mpill">Sanctions · Adverse media · KYC APIs</span>
+            <span class="mpill">Banking · Cross-border payments</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PwC ── -->
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-card-left">
+          <div class="exp-company-badge" style="background:linear-gradient(135deg,#E0301E,#D04A02)">PwC</div>
+          <div>
+            <p class="exp-role">Data Analyst — Financial Services Analytics</p>
+            <p class="exp-org">PwC · Bengaluru, India</p>
+          </div>
+        </div>
+        <div class="exp-card-right">
+          <span class="exp-tenure">Jun 2015 – Jan 2017</span>
+          <span class="exp-type">Full-time · 1.5 years</span>
+        </div>
+      </div>
+
+      <p class="exp-context">
+        Analysed large transaction datasets using SQL to surface fraud patterns and behavioural anomalies for a US online-gaming operator and financial services clients across banking and payments — building the data and fraud detection foundations carried through every subsequent role.
+      </p>
+
+      <div class="exp-projects">
+        <div class="exp-project">
+          <div class="exp-project-header">
+            <span class="exp-project-icon">📈</span>
+            <h4 class="exp-project-title">Fraud Pattern Analysis &amp; KPI Dashboards</h4>
+          </div>
+          <p class="exp-desc">Built SQL-based analytical models to identify fraud patterns, behavioural anomalies, and account-integrity risks across transaction data for a US online-gaming operator. Delivered Tableau dashboards tracking campaign performance, fraud rate trends, and account-integrity KPIs for financial services clients — establishing the data fluency and fraud detection thinking that underpinned all subsequent product and compliance work.</p>
+          <div class="exp-metrics" style="margin-top:1rem">
+            <span class="mpill">SQL · Tableau</span>
+            <span class="mpill">Fraud pattern analysis</span>
+            <span class="mpill">Banking · Payments · Online gaming</span>
+          </div>
         </div>
       </div>
     </div>
