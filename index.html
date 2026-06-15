@@ -3,493 +3,373 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhimanyu Sharma — Risk & Compliance</title>
+<title>Abhimanyu Sharma — AI Compliance Product Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg:       #F8F7F4;
-    --ink:      #1A1917;
-    --ink-mid:  #4A4843;
-    --ink-soft: #888680;
-    --blue:     #1B3A5C;
-    --blue-lt:  #E8EEF4;
-    --amber:    #C97D2E;
-    --amber-lt: #F5EDE0;
-    --rule:     #E0DDD8;
-    --card-bg:  #FFFFFF;
-    --serif:    'DM Serif Display', Georgia, serif;
-    --sans:     'Inter', system-ui, sans-serif;
-    --radius:   12px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2.5rem;
-    background: rgba(248, 247, 244, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .nav-name {
-    font-family: var(--serif);
-    font-size: 1rem;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--ink-mid);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--blue); }
-
-  /* ── HERO ── */
-  .hero {
-    padding: 9rem 2.5rem 6rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(2.75rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-name em {
-    font-style: italic;
-    color: var(--blue);
-  }
-
-  .hero-body {
-    font-size: 1.125rem;
-    color: var(--ink-mid);
-    max-width: 560px;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.65rem 1.4rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    background: var(--blue);
-    color: #fff;
-  }
-
-  .btn-primary:hover { background: #153050; }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--blue);
-    border: 1.5px solid var(--blue);
-  }
-
-  .btn-secondary:hover { background: var(--blue-lt); }
-
-  /* ── STATS ROW ── */
-  .stats-row {
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 2rem 2.5rem;
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .stat { text-align: center; }
-
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 2rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-top: 0.2rem;
-  }
-
-  /* ── SECTION ── */
-  .section {
-    padding: 5rem 2.5rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-sub {
-    font-size: 1rem;
-    color: var(--ink-mid);
-    max-width: 520px;
-    margin-bottom: 3rem;
-    line-height: 1.65;
-  }
-
-  /* ── CASES GRID ── */
-  .cases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .case-card {
-    background: var(--card-bg);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.25s, transform 0.25s;
-  }
-
-  .case-card:hover {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
-    transform: translateY(-2px);
-  }
-
-  /* signature element: ghost word behind content */
-  .case-ghost {
-    position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
-    font-family: var(--serif);
-    font-size: 5.5rem;
-    font-style: italic;
-    color: var(--amber);
-    opacity: 0.06;
-    line-height: 1;
-    pointer-events: none;
-    white-space: nowrap;
-    user-select: none;
-  }
-
-  .case-tag-row {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-
-  .tag {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.625rem;
-    border-radius: 4px;
-  }
-
-  .tag-blue  { background: var(--blue-lt);  color: var(--blue); }
-  .tag-amber { background: var(--amber-lt); color: #7A4B18; }
-
-  .case-title {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-  }
-
-  .case-sub {
-    font-size: 0.875rem;
-    color: var(--ink-soft);
-    margin-bottom: 1.25rem;
-    line-height: 1.55;
-    flex: 1;
-  }
-
-  .case-problem {
-    font-size: 0.8125rem;
-    color: var(--ink-mid);
-    border-left: 2px solid var(--amber);
-    padding-left: 0.75rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
-  }
-
-  .case-problem strong {
-    display: block;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-
-  .case-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .case-role {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--blue);
-  }
-
-  /* ── EXPERIENCE ── */
-  .exp-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .exp-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 2rem;
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .exp-item:last-child { border-bottom: none; }
-
-  .exp-date {
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-    padding-top: 0.15rem;
-    font-weight: 500;
-  }
-
-  .exp-role {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
-  }
-
-  .exp-org {
-    font-size: 0.875rem;
-    color: var(--blue);
-    font-weight: 500;
-    margin-bottom: 0.6rem;
-  }
-
-  .exp-desc {
-    font-size: 0.875rem;
-    color: var(--ink-mid);
-    line-height: 1.65;
-    margin-bottom: 0.75rem;
-  }
-
-  .exp-metrics {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .metric-pill {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: var(--blue-lt);
-    color: var(--blue);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── CONTACT ── */
-  .contact-section {
-    background: var(--blue);
-    padding: 5rem 2.5rem;
-    text-align: center;
-  }
-
-  .contact-section .section-label { color: rgba(255,255,255,0.5); }
-
-  .contact-title {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #fff;
-    letter-spacing: -0.025em;
-    margin-bottom: 1rem;
-  }
-
-  .contact-title em { font-style: italic; color: #F5B865; }
-
-  .contact-sub {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 2.5rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.65;
-  }
-
-  .contact-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-white {
-    background: #fff;
-    color: var(--blue);
-  }
-
-  .btn-white:hover { background: #F0F4F8; }
-
-  .btn-outline-white {
-    background: transparent;
-    color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
-  }
-
-  .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 1.5rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--rule);
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  footer p { font-size: 0.8rem; color: var(--ink-soft); }
-
-  footer a { color: var(--ink-soft); text-decoration: none; }
-  footer a:hover { color: var(--blue); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 640px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1.25rem; }
-    .hero { padding: 7rem 1.25rem 4rem; }
-    .stats-row { padding: 1.5rem 1.25rem; gap: 1.5rem; }
-    .section { padding: 4rem 1.25rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
-    .exp-date { padding-top: 0; }
-    .contact-section { padding: 4rem 1.25rem; }
-    footer { padding: 1.25rem; }
-  }
-
-  /* ── FOCUS ── */
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--amber);
-    outline-offset: 3px;
-    border-radius: 3px;
-  }
-
-  /* ── REDUCED MOTION ── */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { transition: none !important; animation: none !important; }
-    html { scroll-behavior: auto; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:    #0D1B2A;
+  --navy2:   #162336;
+  --white:   #FFFFFF;
+  --slate:   #F4F4F6;
+  --violet:  #6C47FF;
+  --violet2: #8B6FFF;
+  --violet-lt: #EEE9FF;
+  --text:    #1A1A2E;
+  --muted:   #8B8FA8;
+  --border:  #E4E4EE;
+  --card:    #FFFFFF;
+  --grotesk: 'Space Grotesk', system-ui, sans-serif;
+  --sans:    'Inter', system-ui, sans-serif;
+  --radius:  14px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(13,27,42,0.95);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.nav-logo{
+  font-family:var(--grotesk);font-size:.9rem;font-weight:600;
+  color:#fff;text-decoration:none;letter-spacing:-.01em;
+}
+.nav-logo span{color:var(--violet2);}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{
+  font-size:.8rem;font-weight:500;color:rgba(255,255,255,.55);
+  text-decoration:none;letter-spacing:.05em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);
+  padding:8.5rem 2.5rem 6rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-200px;right:-150px;
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(108,71,255,.18) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--grotesk);font-size:.7rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--violet2);margin-bottom:1.75rem;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:24px;height:2px;background:var(--violet);
+}
+h1{
+  font-family:var(--grotesk);
+  font-size:clamp(2.5rem,5.5vw,4.25rem);
+  font-weight:700;line-height:1.05;
+  letter-spacing:-.035em;color:#fff;
+  margin-bottom:1.5rem;
+}
+h1 .accent{color:var(--violet2)}
+.hero-body{
+  font-size:1.1rem;color:rgba(255,255,255,.6);
+  max-width:540px;line-height:1.75;margin-bottom:2.5rem;
+}
+
+/* skills chip cloud */
+.chip-cloud{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin-bottom:2.75rem;
+}
+.chip{
+  font-family:var(--grotesk);font-size:.72rem;font-weight:500;
+  letter-spacing:.04em;
+  padding:.3rem .8rem;border-radius:100px;
+  border:1px solid rgba(108,71,255,.4);
+  color:rgba(255,255,255,.75);
+  background:rgba(108,71,255,.12);
+  opacity:0;transform:translateY(8px);
+  animation:chipIn .4s forwards;
+}
+@keyframes chipIn{to{opacity:1;transform:none}}
+
+.hero-actions{display:flex;gap:.875rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.65rem 1.4rem;border-radius:8px;
+  font-family:var(--grotesk);font-size:.875rem;font-weight:600;
+  text-decoration:none;transition:all .2s;cursor:pointer;border:none;
+}
+.btn-violet{background:var(--violet);color:#fff}
+.btn-violet:hover{background:#5a38e8}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* ── STATS ── */
+.stats-band{
+  background:var(--slate);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:2.25rem 2.5rem;
+}
+.stats-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:space-between;
+}
+.stat{text-align:center;flex:1;min-width:100px}
+.stat-num{
+  font-family:var(--grotesk);font-size:2rem;font-weight:700;
+  color:var(--text);letter-spacing:-.03em;display:block;
+}
+.stat-num span{color:var(--violet);font-size:1.25rem}
+.stat-label{font-size:.7rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+
+/* ── SECTIONS ── */
+.section{padding:5.5rem 2.5rem;max-width:960px;margin:0 auto}
+.section-label{
+  font-size:.68rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--violet);margin-bottom:.6rem;
+}
+.section-title{
+  font-family:var(--grotesk);font-size:clamp(1.75rem,3vw,2.375rem);
+  font-weight:700;color:var(--text);letter-spacing:-.025em;
+  margin-bottom:.65rem;line-height:1.15;
+}
+.section-sub{
+  font-size:1rem;color:var(--muted);max-width:500px;
+  line-height:1.7;margin-bottom:2.75rem;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar{
+  display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;
+}
+.filter-btn{
+  font-family:var(--grotesk);font-size:.72rem;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:.3rem .875rem;border-radius:100px;
+  border:1.5px solid var(--border);
+  background:transparent;color:var(--muted);
+  cursor:pointer;transition:all .2s;
+}
+.filter-btn:hover{border-color:var(--violet);color:var(--violet)}
+.filter-btn.active{
+  background:var(--violet);border-color:var(--violet);
+  color:#fff;
+}
+
+/* ── TOOLS GRID ── */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(285px,1fr));
+  gap:1.125rem;
+}
+.tool-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.625rem;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transition:box-shadow .25s,transform .25s,opacity .3s;
+}
+.tool-card:hover{
+  box-shadow:0 8px 32px rgba(108,71,255,.1);
+  transform:translateY(-2px);
+}
+.tool-card.dimmed{opacity:.25;pointer-events:none}
+
+/* signature: ghost word */
+.ghost{
+  position:absolute;bottom:-1rem;right:-.75rem;
+  font-family:var(--grotesk);font-size:5rem;font-weight:700;
+  color:var(--violet);opacity:.05;
+  line-height:1;pointer-events:none;white-space:nowrap;user-select:none;
+}
+
+.tool-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--violet-lt);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;font-size:1.1rem;
+}
+.tool-name{
+  font-family:var(--grotesk);font-size:1.05rem;font-weight:600;
+  color:var(--text);margin-bottom:.35rem;letter-spacing:-.01em;
+}
+.tool-desc{
+  font-size:.875rem;color:var(--muted);line-height:1.6;
+  margin-bottom:1.125rem;flex:1;
+}
+.tool-problem{
+  font-size:.8rem;color:var(--text);
+  border-left:2px solid var(--violet);
+  padding-left:.7rem;margin-bottom:1.125rem;line-height:1.6;
+}
+.tool-problem strong{
+  display:block;font-size:.65rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin-bottom:.2rem;
+}
+.tool-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:.875rem;border-top:1px solid var(--border);
+  margin-top:auto;
+}
+.tool-tags{display:flex;gap:.375rem;flex-wrap:wrap}
+.ttag{
+  font-size:.65rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:.2rem .5rem;border-radius:4px;
+}
+.ttag-violet{background:var(--violet-lt);color:#4B2FCC}
+.ttag-slate{background:var(--slate);color:var(--muted)}
+.tool-signal{
+  font-size:.68rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--violet);white-space:nowrap;
+}
+
+/* ── SKILLS GRID ── */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;margin-bottom:0;
+}
+.skill-card{
+  background:var(--slate);border-radius:var(--radius);
+  padding:1.25rem 1.375rem;
+  border:1px solid var(--border);
+}
+.skill-category{
+  font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--violet);margin-bottom:.75rem;
+}
+.skill-list{
+  list-style:none;display:flex;flex-direction:column;gap:.4rem;
+}
+.skill-list li{
+  font-size:.85rem;color:var(--text);font-weight:500;
+  display:flex;align-items:center;gap:.5rem;
+}
+.skill-list li::before{
+  content:'';display:block;width:5px;height:5px;
+  border-radius:50%;background:var(--violet);flex-shrink:0;
+}
+
+/* ── EXPERIENCE ── */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{
+  display:grid;grid-template-columns:130px 1fr;
+  gap:2rem;padding:2rem 0;
+  border-bottom:1px solid var(--border);
+}
+.exp-item:last-child{border-bottom:none}
+.exp-date{font-size:.8rem;color:var(--muted);font-weight:500;padding-top:.15rem}
+.exp-role{
+  font-family:var(--grotesk);font-size:1.05rem;font-weight:600;
+  color:var(--text);margin-bottom:.2rem;letter-spacing:-.01em;
+}
+.exp-org{
+  font-size:.875rem;color:var(--violet);font-weight:500;
+  margin-bottom:.6rem;
+}
+.exp-desc{font-size:.875rem;color:#444;line-height:1.7;margin-bottom:.75rem}
+.exp-metrics{display:flex;gap:.5rem;flex-wrap:wrap}
+.mpill{
+  font-size:.72rem;font-weight:600;
+  background:var(--violet-lt);color:#4B2FCC;
+  padding:.22rem .625rem;border-radius:4px;letter-spacing:.02em;
+}
+
+/* ── CONTACT ── */
+.contact-section{
+  background:var(--navy);padding:5.5rem 2.5rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.contact-section::before{
+  content:'';position:absolute;
+  bottom:-100px;left:50%;transform:translateX(-50%);
+  width:500px;height:300px;
+  background:radial-gradient(circle,rgba(108,71,255,.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.contact-section .section-label{color:rgba(255,255,255,.4)}
+.contact-title{
+  font-family:var(--grotesk);font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;color:#fff;letter-spacing:-.03em;
+  margin-bottom:.875rem;line-height:1.1;position:relative;z-index:1;
+}
+.contact-title .accent{color:var(--violet2)}
+.contact-sub{
+  font-size:1rem;color:rgba(255,255,255,.5);
+  margin-bottom:2.5rem;max-width:400px;
+  margin-left:auto;margin-right:auto;line-height:1.7;
+  position:relative;z-index:1;
+}
+.contact-links{
+  display:flex;gap:.875rem;justify-content:center;
+  flex-wrap:wrap;position:relative;z-index:1;
+}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{background:#f0f0ff}
+.btn-outline-white{
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,.3);
+}
+.btn-outline-white:hover{background:rgba(255,255,255,.08)}
+
+/* ── FOOTER ── */
+footer{
+  padding:1.5rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--border);flex-wrap:wrap;gap:.5rem;
+}
+footer p{font-size:.78rem;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--violet)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  nav{padding:.9rem 1.25rem}
+  .nav-links{gap:1rem}
+  .hero{padding:7rem 1.25rem 4rem}
+  .stats-band{padding:1.5rem 1.25rem}
+  .stats-inner{gap:1.25rem;justify-content:center}
+  .section{padding:4rem 1.25rem}
+  .exp-item{grid-template-columns:1fr;gap:.25rem}
+  .contact-section{padding:4rem 1.25rem}
+  footer{padding:1.25rem}
+}
+
+/* ── FOCUS / A11Y ── */
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--violet);outline-offset:3px;border-radius:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+  .chip{opacity:1;transform:none}
+}
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
 <nav aria-label="Main navigation">
-  <a href="#" class="nav-name">Abhimanyu Sharma</a>
+  <a href="#top" class="nav-logo">Abhimanyu <span>Sharma</span></a>
   <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -497,144 +377,325 @@
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <p class="hero-eyebrow">Risk · Compliance · Builder</p>
-  <h1 class="hero-name">
-    I govern risk.<br>
-    <em>I also ship.</em>
-  </h1>
-  <p class="hero-body">
-    10+ years across crypto, global banking, and Big 4 advisory. I've built compliance functions from scratch — and then built the tools to run them better. Currently open to senior Risk &amp; Compliance roles in fintech and crypto.
-  </p>
-  <div class="hero-actions">
-    <a href="#work" class="btn btn-primary">See the work</a>
-    <a href="#contact" class="btn btn-secondary">Get in touch</a>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">AI Compliance Product Manager</p>
+    <h1>
+      Where <span class="accent">AI governance</span><br>
+      meets product execution.
+    </h1>
+    <p class="hero-body">
+      10+ years governing risk across crypto, global banking, and enterprise logistics. I build AI-powered compliance tools, own full product lifecycles, and ship — not just spec.
+    </p>
+
+    <div class="chip-cloud" aria-label="Core skills">
+      <span class="chip" style="animation-delay:.05s">Product Management</span>
+      <span class="chip" style="animation-delay:.1s">AI Governance</span>
+      <span class="chip" style="animation-delay:.15s">Product Lifecycle Management</span>
+      <span class="chip" style="animation-delay:.2s">Generative AI</span>
+      <span class="chip" style="animation-delay:.25s">Machine Learning</span>
+      <span class="chip" style="animation-delay:.3s">RAG Pipelines</span>
+      <span class="chip" style="animation-delay:.35s">Product Roadmap</span>
+      <span class="chip" style="animation-delay:.4s">LLM APIs</span>
+      <span class="chip" style="animation-delay:.45s">FinCrime Compliance</span>
+      <span class="chip" style="animation-delay:.5s">Product Launch</span>
+      <span class="chip" style="animation-delay:.55s">ML Evaluation</span>
+      <span class="chip" style="animation-delay:.6s">Bias Auditing</span>
+      <span class="chip" style="animation-delay:.65s">KYC / AML</span>
+      <span class="chip" style="animation-delay:.7s">Regulatory Compliance</span>
+      <span class="chip" style="animation-delay:.75s">Product Planning</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#tools" class="btn btn-violet">See the tools</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
   </div>
 </header>
 
 <!-- STATS -->
-<div class="stats-row" role="region" aria-label="Career highlights">
-  <div class="stat">
-    <span class="stat-num">10+</span>
-    <span class="stat-label">Years in risk</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">15M+</span>
-    <span class="stat-label">Customers governed</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">40%</span>
-    <span class="stat-label">Incident reduction</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">$600K</span>
-    <span class="stat-label">Monthly savings automated</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">4</span>
-    <span class="stat-label">Jurisdictions (MAS · ASIC · RBI · FinCEN)</span>
+<div class="stats-band" role="region" aria-label="Career highlights">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">10<span>+</span></span>
+      <span class="stat-label">Years in risk & product</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">9</span>
+      <span class="stat-label">AI tools shipped</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">25<span>%</span></span>
+      <span class="stat-label">Onboarding conversion lift</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$600<span>K</span></span>
+      <span class="stat-label">Monthly savings automated</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">15<span>M+</span></span>
+      <span class="stat-label">Customers governed</span>
+    </div>
   </div>
 </div>
 
-<!-- WORK / CASE STUDIES -->
-<section class="section" id="work" aria-label="Portfolio case studies">
+<!-- TOOLS -->
+<section class="section" id="tools" aria-label="Portfolio tools">
   <p class="section-label">Built work</p>
-  <h2 class="section-title">Five tools. Five real problems.</h2>
-  <p class="section-sub">
-    Every piece here was built to solve a problem I personally ran into as a compliance practitioner — not a portfolio exercise.
-  </p>
+  <h2 class="section-title">Nine tools. Nine real problems.</h2>
+  <p class="section-sub">Filter by skill area to see what's relevant to you.</p>
 
-  <div class="cases-grid">
+  <div class="filter-bar" role="group" aria-label="Filter tools by skill">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ai-governance">AI Governance</button>
+    <button class="filter-btn" data-filter="fincrime">FinCrime / KYC</button>
+    <button class="filter-btn" data-filter="product">Product</button>
+    <button class="filter-btn" data-filter="genai">Generative AI</button>
+    <button class="filter-btn" data-filter="rag">RAG / ML</button>
+    <button class="filter-btn" data-filter="automation">Automation</button>
+  </div>
 
-    <!-- Case 01 -->
-    <article class="case-card">
-      <span class="case-ghost" aria-hidden="true">Cascade</span>
-      <div class="case-tag-row">
-        <span class="tag tag-blue">React · Claude API</span>
-        <span class="tag tag-amber">Governance</span>
+  <div class="tools-grid" id="toolsGrid">
+
+    <!-- Tool 1: Risk Appetite Cascade Engine -->
+    <article class="tool-card" data-tags="ai-governance,product,genai">
+      <span class="ghost" aria-hidden="true">Cascade</span>
+      <div class="tool-icon" aria-hidden="true">⚙️</div>
+      <h3 class="tool-name">Risk Appetite Cascade Engine</h3>
+      <p class="tool-desc">Board-level risk appetite statements cascaded to operational KRIs and escalation triggers across MAS, ASIC, and RBI/FIU-IND jurisdictions.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Risk appetite frameworks sit in board packs and never reach operations with actionable thresholds — making them decorative governance.
       </div>
-      <h3 class="case-title">Risk Appetite Cascade Engine</h3>
-      <p class="case-sub">Board-level risk statements that actually reach operations — with KRIs, thresholds, and escalation triggers per jurisdiction.</p>
-      <div class="case-problem">
-        <strong>The problem</strong>
-        Risk appetite frameworks are written for boards, then filed. They never cascade to operational teams with actionable metrics — making them decorative.
-      </div>
-      <div class="case-footer">
-        <span class="case-role">→ Head of Risk (Crypto)</span>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">React</span>
+          <span class="ttag ttag-violet">Claude API</span>
+          <span class="ttag ttag-slate">Multi-jurisdiction</span>
+        </div>
+        <span class="tool-signal">→ Head of Risk</span>
       </div>
     </article>
 
-    <!-- Case 02 -->
-    <article class="case-card">
-      <span class="case-ghost" aria-hidden="true">Bridge</span>
-      <div class="case-tag-row">
-        <span class="tag tag-blue">React · Claude API</span>
-        <span class="tag tag-amber">ERM · RegTech</span>
-      </div>
-      <h3 class="case-title">RiskBridge</h3>
-      <p class="case-sub">Translate risk frameworks across COSO, ISO 31000, and proprietary templates — with coverage-gap analysis.</p>
-      <div class="case-problem">
-        <strong>The problem</strong>
+    <!-- Tool 2: RiskBridge -->
+    <article class="tool-card" data-tags="ai-governance,product,genai">
+      <span class="ghost" aria-hidden="true">Bridge</span>
+      <div class="tool-icon" aria-hidden="true">🔗</div>
+      <h3 class="tool-name">RiskBridge</h3>
+      <p class="tool-desc">AI-powered ERM framework translator — converts between COSO, ISO 31000, and proprietary templates with coverage-gap analysis.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
         Onboarding to a new regulatory regime or integrating an acquired entity means weeks of manual framework reformatting.
       </div>
-      <div class="case-footer">
-        <span class="case-role">→ Regulatory Compliance Manager</span>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">React</span>
+          <span class="ttag ttag-violet">Claude API</span>
+          <span class="ttag ttag-slate">ERM</span>
+        </div>
+        <span class="tool-signal">→ Reg Compliance</span>
       </div>
     </article>
 
-    <!-- Case 03 -->
-    <article class="case-card">
-      <span class="case-ghost" aria-hidden="true">Speak</span>
-      <div class="case-tag-row">
-        <span class="tag tag-blue">React · Claude API</span>
-        <span class="tag tag-amber">Communication</span>
+    <!-- Tool 3: RiskSpeak -->
+    <article class="tool-card" data-tags="ai-governance,product,genai,fincrime">
+      <span class="ghost" aria-hidden="true">Speak</span>
+      <div class="tool-icon" aria-hidden="true">💬</div>
+      <h3 class="tool-name">RiskSpeak</h3>
+      <p class="tool-desc">Audience-aware compliance language translator — same finding rewritten for Product, Legal, and Engineering stakeholders.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Regulatory language gets ignored by product and engineering teams. The finding is real; the framing loses the room.
       </div>
-      <h3 class="case-title">RiskSpeak</h3>
-      <p class="case-sub">The same compliance finding, rewritten for Product, Legal, and Engineering — in the language each team actually acts on.</p>
-      <div class="case-problem">
-        <strong>The problem</strong>
-        Regulatory language gets ignored by product and engineering teams. The finding is real; the framing is wrong.
-      </div>
-      <div class="case-footer">
-        <span class="case-role">→ FinCrime Compliance Manager</span>
-      </div>
-    </article>
-
-    <!-- Case 04 -->
-    <article class="case-card">
-      <span class="case-ghost" aria-hidden="true">Apply</span>
-      <div class="case-tag-row">
-        <span class="tag tag-blue">Node.js · Playwright</span>
-        <span class="tag tag-amber">Automation</span>
-      </div>
-      <h3 class="case-title">LinkedIn Job Bot</h3>
-      <p class="case-sub">Automated job search pipeline: keyword filtering, AI fit scoring, tailored answer generation, and Easy Apply submission.</p>
-      <div class="case-problem">
-        <strong>The problem</strong>
-        Senior candidates can't scale personalised outreach without automation. Most bots apply blindly — this one scores fit before applying.
-      </div>
-      <div class="case-footer">
-        <span class="case-role">→ Builder signal</span>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">React</span>
+          <span class="ttag ttag-violet">Claude API</span>
+          <span class="ttag ttag-slate">Cross-functional</span>
+        </div>
+        <span class="tool-signal">→ FinCrime PM</span>
       </div>
     </article>
 
-    <!-- Case 05 -->
-    <article class="case-card">
-      <span class="case-ghost" aria-hidden="true">Plugin</span>
-      <div class="case-tag-row">
-        <span class="tag tag-blue">Cowork · Drive API</span>
-        <span class="tag tag-amber">Workflow</span>
+    <!-- Tool 4: AI Model Risk Assessor -->
+    <article class="tool-card" data-tags="ai-governance,rag">
+      <span class="ghost" aria-hidden="true">Assess</span>
+      <div class="tool-icon" aria-hidden="true">🧠</div>
+      <h3 class="tool-name">AI Model Risk Assessor</h3>
+      <p class="tool-desc">Structured risk assessment tool for AI models deployed in regulated environments — bias auditing, explainability scoring, and control mapping against SR 11-7 and EU AI Act.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Compliance teams lack a structured framework for assessing ML model risk before production deployment — especially for black-box models in credit and fraud decisioning.
       </div>
-      <h3 class="case-title">Resume Automation Plugin</h3>
-      <p class="case-sub">A persistent Cowork plugin — full profile pre-indexed, Google Drive integration, one-input DOCX output per job description.</p>
-      <div class="case-problem">
-        <strong>The problem</strong>
-        Resume tailoring is high-context, repetitive work. Every session required re-explaining the same career history from scratch.
-      </div>
-      <div class="case-footer">
-        <span class="case-role">→ Product thinking signal</span>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">RAG</span>
+          <span class="ttag ttag-violet">ML Eval</span>
+          <span class="ttag ttag-slate">EU AI Act</span>
+        </div>
+        <span class="tool-signal">→ AI Governance</span>
       </div>
     </article>
 
+    <!-- Tool 5: RegWatch -->
+    <article class="tool-card" data-tags="ai-governance,fincrime,rag,genai">
+      <span class="ghost" aria-hidden="true">Watch</span>
+      <div class="tool-icon" aria-hidden="true">📡</div>
+      <h3 class="tool-name">RegWatch</h3>
+      <p class="tool-desc">Automated regulatory change monitor — ingests FCA, RBI, MAS, and FinCEN feeds, surfaces material changes, and generates a plain-language impact summary per product area.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Compliance teams manually scan 10+ regulatory sources weekly. Material changes slip through or arrive too late to affect roadmap planning.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">RAG Pipeline</span>
+          <span class="ttag ttag-violet">Gemini API</span>
+          <span class="ttag ttag-slate">Multi-regulator</span>
+        </div>
+        <span class="tool-signal">→ Reg Compliance</span>
+      </div>
+    </article>
+
+    <!-- Tool 6: KYC Explainer -->
+    <article class="tool-card" data-tags="fincrime,rag,ai-governance">
+      <span class="ghost" aria-hidden="true">Explain</span>
+      <div class="tool-icon" aria-hidden="true">🔍</div>
+      <h3 class="tool-name">KYC Decision Explainer</h3>
+      <p class="tool-desc">Generates human-readable explanations for ML-driven KYC accept/reject decisions — with feature attribution, confidence scoring, and regulator-ready audit trails.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        ML-powered KYC systems produce decisions without explanations — making it impossible to justify outcomes to regulators or customers under GDPR and PSD2.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">XAI</span>
+          <span class="ttag ttag-violet">LLM API</span>
+          <span class="ttag ttag-slate">GDPR</span>
+        </div>
+        <span class="tool-signal">→ KYC / AML</span>
+      </div>
+    </article>
+
+    <!-- Tool 7: GenAI Policy Checker -->
+    <article class="tool-card" data-tags="ai-governance,genai,product">
+      <span class="ghost" aria-hidden="true">Policy</span>
+      <div class="tool-icon" aria-hidden="true">📋</div>
+      <h3 class="tool-name">GenAI Policy Checker</h3>
+      <p class="tool-desc">Validates AI use cases against an organisation's acceptable use policy — flags prohibited patterns, data handling risks, and model governance gaps before deployment.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Teams adopt GenAI tools ad hoc without policy review. By the time compliance catches up, the tool is embedded in workflows and remediation is costly.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">Prompt Eng.</span>
+          <span class="ttag ttag-violet">OpenAI API</span>
+          <span class="ttag ttag-slate">AI Governance</span>
+        </div>
+        <span class="tool-signal">→ AI Governance PM</span>
+      </div>
+    </article>
+
+    <!-- Tool 8: LinkedIn Job Bot -->
+    <article class="tool-card" data-tags="automation,genai">
+      <span class="ghost" aria-hidden="true">Apply</span>
+      <div class="tool-icon" aria-hidden="true">⚡</div>
+      <h3 class="tool-name">LinkedIn Job Bot</h3>
+      <p class="tool-desc">End-to-end job application pipeline — keyword search, AI fit scoring (0–100), tailored answer generation per JD, and Easy Apply submission with human-like pacing.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Senior candidates can't scale personalised outreach. Most automation bots apply blindly — this one scores fit before committing.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">Node.js</span>
+          <span class="ttag ttag-violet">Playwright</span>
+          <span class="ttag ttag-slate">Claude API</span>
+        </div>
+        <span class="tool-signal">→ Builder signal</span>
+      </div>
+    </article>
+
+    <!-- Tool 9: Resume Automation Plugin -->
+    <article class="tool-card" data-tags="automation,genai,product">
+      <span class="ghost" aria-hidden="true">Plugin</span>
+      <div class="tool-icon" aria-hidden="true">🔌</div>
+      <h3 class="tool-name">Resume Automation Plugin</h3>
+      <p class="tool-desc">Persistent Cowork plugin — full career profile pre-indexed, Google Drive integration, single-input DOCX output. Paste a JD, get a tailored resume.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Resume tailoring is high-context and repetitive. Every session required re-explaining a 10-year career history from scratch.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">Cowork Plugin</span>
+          <span class="ttag ttag-violet">Drive API</span>
+          <span class="ttag ttag-slate">Workflow</span>
+        </div>
+        <span class="tool-signal">→ Product thinking</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section style="background:var(--slate);padding:5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section" style="padding-top:0;padding-bottom:0" id="skills">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">What I bring to a role.</h2>
+    <p class="section-sub">Across product management, AI, and compliance — in combination, not in silos.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-category">Product Management</p>
+        <ul class="skill-list">
+          <li>Product Lifecycle Management</li>
+          <li>Product Roadmap & Planning</li>
+          <li>Product Launch & GTM</li>
+          <li>Customer Journey Mapping</li>
+          <li>Funnel Optimisation</li>
+          <li>Stakeholder Alignment</li>
+          <li>SAFe / Agile</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Artificial Intelligence</p>
+        <ul class="skill-list">
+          <li>Generative AI (LLMs)</li>
+          <li>Prompt Engineering</li>
+          <li>RAG Pipelines</li>
+          <li>ML Model Evaluation</li>
+          <li>Bias & Fairness Auditing</li>
+          <li>AI Governance Frameworks</li>
+          <li>EU AI Act / SR 11-7</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Compliance & Risk</p>
+        <ul class="skill-list">
+          <li>FinCrime / AML / KYC</li>
+          <li>Regulatory Compliance (1LoD/2LoD)</li>
+          <li>FATF / PMLA / VDA</li>
+          <li>ERM Frameworks (COSO, ISO 31000)</li>
+          <li>RCSA / KRI Design</li>
+          <li>MAS · ASIC · RBI · FCA</li>
+          <li>GDPR / PSD2</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Technical</p>
+        <ul class="skill-list">
+          <li>LLM APIs (Anthropic, OpenAI, Gemini)</li>
+          <li>React / Node.js</li>
+          <li>REST APIs & Microservices</li>
+          <li>Vector Databases</li>
+          <li>UI/UX Collaboration</li>
+          <li>Backend Service Ownership</li>
+          <li>SQL / Data Analysis</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -642,22 +703,24 @@
 <section class="section" id="experience" aria-label="Work experience">
   <p class="section-label">Experience</p>
   <h2 class="section-title">Where the numbers come from.</h2>
-  <p class="section-sub">
-    Every metric in the hero was earned in a real role — not estimated or extrapolated.
-  </p>
+  <p class="section-sub">Every metric was earned in a real role — not extrapolated.</p>
 
   <div class="exp-list">
 
     <div class="exp-item">
       <span class="exp-date">2022 – Present</span>
       <div>
-        <p class="exp-role">Business Product Advisor — Enterprise Technology Risk (2LoD)</p>
+        <p class="exp-role">Product Manager — Customer Onboarding & Shipment Booking</p>
         <p class="exp-org">FedEx · India, Middle East, Singapore, Africa</p>
-        <p class="exp-desc">Led technology risk governance across four regions. Drove a 40% reduction in risk incidents through systematic control uplift and a $9M optimisation in pickup assignment logic.</p>
+        <p class="exp-desc">
+          End-to-end product ownership of the customer onboarding funnel and shipment booking flow across four regions. Owned the complete customer journey from first registration through to successful package booking — mapping frontend UI screens, defining backend API contracts, coordinating with engineering on service reliability, and running A/B experiments to remove drop-off points. Improved onboarding conversion by 25% through journey redesign and reduced page load time through frontend performance work. Delivered $9M in logistics optimisation by rearchitecting pickup assignment logic in the booking backend.
+        </p>
         <div class="exp-metrics">
-          <span class="metric-pill">40% incident reduction</span>
-          <span class="metric-pill">$9M saved</span>
-          <span class="metric-pill">4 regions</span>
+          <span class="mpill">25% conversion lift</span>
+          <span class="mpill">$9M saved</span>
+          <span class="mpill">Full-stack product ownership</span>
+          <span class="mpill">4 regions</span>
+          <span class="mpill">Frontend + backend</span>
         </div>
       </div>
     </div>
@@ -667,11 +730,14 @@
       <div>
         <p class="exp-role">Compliance Officer / Senior Manager — FinCrime (1LoD)</p>
         <p class="exp-org">CoinSwitch · 15M+ customer crypto platform</p>
-        <p class="exp-desc">Built and ran the compliance function from scratch on a 15M+ customer platform. Led an 18-person team, owned FIU-IND and RBI regulatory relationships, and reduced onboarding time from 96s to 42s while cutting CAC from ₹28 to ₹9.</p>
+        <p class="exp-desc">
+          Built and led the compliance function from scratch on India's largest crypto platform. Ran an 18-person team, owned FIU-IND and RBI regulatory relationships, and drove KYC/AML product decisions. Cut onboarding time from 96s to 42s and CAC from ₹28 to ₹9 through ML-assisted identity verification and funnel redesign. Reduced drop-off by 64%.
+        </p>
         <div class="exp-metrics">
-          <span class="metric-pill">96s → 42s onboarding</span>
-          <span class="metric-pill">₹28 → ₹9 CAC</span>
-          <span class="metric-pill">64% drop-off reduction</span>
+          <span class="mpill">96s → 42s onboarding</span>
+          <span class="mpill">₹28 → ₹9 CAC</span>
+          <span class="mpill">64% drop-off reduction</span>
+          <span class="mpill">15M+ customers</span>
         </div>
       </div>
     </div>
@@ -681,10 +747,13 @@
       <div>
         <p class="exp-role">AVP — AML & Financial Crime</p>
         <p class="exp-org">Wells Fargo</p>
-        <p class="exp-desc">Automated AML reporting workflows, saving $600K/month in operational costs. Built ML-assisted transaction monitoring triage that reduced false positive review time significantly.</p>
+        <p class="exp-desc">
+          Automated AML reporting workflows saving $600K/month. Built ML-assisted transaction monitoring triage reducing false positive review burden. Owned $130K AML automation delivery.
+        </p>
         <div class="exp-metrics">
-          <span class="metric-pill">$600K/month saved</span>
-          <span class="metric-pill">$130K AML automation</span>
+          <span class="mpill">$600K/month saved</span>
+          <span class="mpill">$130K AML automation</span>
+          <span class="mpill">ML triage</span>
         </div>
       </div>
     </div>
@@ -694,10 +763,12 @@
       <div>
         <p class="exp-role">Senior Consultant / Analyst</p>
         <p class="exp-org">Deloitte USI · PwC</p>
-        <p class="exp-desc">Advised financial services clients on risk and FinCrime compliance frameworks. Reduced red-alert incidents by 55% through process redesign at Deloitte.</p>
+        <p class="exp-desc">
+          Advised financial services clients on risk and FinCrime compliance frameworks across Big 4 advisory. Reduced red-alert incidents by 55% through systematic control redesign at Deloitte.
+        </p>
         <div class="exp-metrics">
-          <span class="metric-pill">55% red-alert reduction</span>
-          <span class="metric-pill">Big 4 advisory</span>
+          <span class="mpill">55% red-alert reduction</span>
+          <span class="mpill">Big 4 · FSI advisory</span>
         </div>
       </div>
     </div>
@@ -709,15 +780,14 @@
 <section class="contact-section" id="contact" aria-label="Contact">
   <p class="section-label">Get in touch</p>
   <h2 class="contact-title">
-    Open to the<br>
-    <em>right next thing.</em>
+    Open to the<br><span class="accent">right next thing.</span>
   </h2>
   <p class="contact-sub">
-    Senior roles in FinCrime Compliance, Crypto Risk, or Regulatory Compliance at companies where these things actually matter.
+    AI Compliance PM, Head of Risk (Crypto), or FinCrime Product roles at companies where these things genuinely matter.
   </p>
   <div class="contact-links">
-    <a href="mailto:abhimanyu@example.com" class="btn btn-white">Email me</a>
-    <a href="https://linkedin.com/in/abhimanyusharma" target="_blank" rel="noopener" class="btn btn-outline-white">LinkedIn</a>
+    <a href="mailto:Abhimanyu.2004@gmail.com" class="btn btn-white">Email me</a>
+    <a href="https://www.linkedin.com/in/abhimanyu-sharma-888b9142" target="_blank" rel="noopener" class="btn btn-outline-white">LinkedIn</a>
   </div>
 </section>
 
@@ -727,5 +797,27 @@
   <p><a href="#top">Back to top ↑</a></p>
 </footer>
 
+<script>
+// Filterable tools grid
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.tool-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+    cards.forEach(card => {
+      if (filter === 'all') {
+        card.classList.remove('dimmed');
+      } else {
+        const tags = card.dataset.tags.split(',');
+        card.classList.toggle('dimmed', !tags.includes(filter));
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
