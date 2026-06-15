@@ -472,7 +472,7 @@ a:focus-visible,button:focus-visible{
       <span class="stat-label">Years in risk & product</span>
     </div>
     <div class="stat">
-      <span class="stat-num">9</span>
+      <span class="stat-num">10</span>
       <span class="stat-label">AI tools shipped</span>
     </div>
     <div class="stat">
@@ -493,13 +493,14 @@ a:focus-visible,button:focus-visible{
 <!-- TOOLS -->
 <section class="section" id="tools" aria-label="Portfolio tools">
   <p class="section-label">Built work</p>
-  <h2 class="section-title">Nine tools. Nine real problems.</h2>
+  <h2 class="section-title">Ten tools. Ten real problems.</h2>
   <p class="section-sub">Filter by skill area to see what's relevant to you.</p>
 
   <div class="filter-bar" role="group" aria-label="Filter tools by skill">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="ai-governance">AI Governance</button>
     <button class="filter-btn" data-filter="fincrime">FinCrime / KYC</button>
+    <button class="filter-btn" data-filter="logistics">Logistics / ML</button>
     <button class="filter-btn" data-filter="product">Product</button>
     <button class="filter-btn" data-filter="genai">Generative AI</button>
     <button class="filter-btn" data-filter="rag">RAG / ML</button>
@@ -511,52 +512,72 @@ a:focus-visible,button:focus-visible{
     <!-- Tool 1: Risk Appetite Cascade Engine -->
     <article class="tool-card" data-tags="ai-governance,product,genai">
       <span class="ghost" aria-hidden="true">Cascade</span>
-      <div class="tool-icon" aria-hidden="true">⚙️</div>
+      <div class="tool-icon">⚙️</div>
       <h3 class="tool-name">Risk Appetite Cascade Engine</h3>
-      <p class="tool-desc">Board-level risk appetite statements cascaded to operational KRIs and escalation triggers across MAS, ASIC, and RBI/FIU-IND jurisdictions.</p>
+      <p class="tool-desc">Translates board-level risk appetite statements into operational KRIs, thresholds, and escalation triggers — structured across a 3-tier hierarchy (Board → Domain → Entity) for MAS, ASIC, and RBI/FIU-IND. Drawn from direct experience building risk governance frameworks across regulated fintech and crypto platforms.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Risk appetite frameworks sit in board packs and never reach operations with actionable thresholds — making them decorative governance.
+        Risk appetite frameworks are written for boards and filed. Operational teams never receive jurisdiction-specific thresholds they can act on — the gap between stated appetite and operational behaviour is where most regulatory findings originate.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
           <span class="ttag ttag-violet">React</span>
           <span class="ttag ttag-violet">Claude API</span>
-          <span class="ttag ttag-slate">Multi-jurisdiction</span>
+          <span class="ttag ttag-slate">MAS · ASIC · RBI</span>
         </div>
         <span class="tool-signal">→ Head of Risk</span>
       </div>
     </article>
 
-    <!-- Tool 2: RiskBridge -->
-    <article class="tool-card" data-tags="ai-governance,product,genai">
-      <span class="ghost" aria-hidden="true">Bridge</span>
-      <div class="tool-icon" aria-hidden="true">🔗</div>
-      <h3 class="tool-name">RiskBridge</h3>
-      <p class="tool-desc">AI-powered ERM framework translator — converts between COSO, ISO 31000, and proprietary templates with coverage-gap analysis.</p>
+    <!-- Tool 2: Smart Shipment Booking Configurator -->
+    <article class="tool-card" data-tags="logistics,product,automation">
+      <span class="ghost" aria-hidden="true">Configure</span>
+      <div class="tool-icon">📦</div>
+      <h3 class="tool-name">Smart Shipment Booking Configurator</h3>
+      <p class="tool-desc">Ingests the free-text notes field from e-commerce orders and transforms it into a structured shipment configuration — extracting delivery frequency, handling instructions, access requirements, and time-window constraints from informal customer language. Built on the fine-tuned NLP model architecture from the FedEx e-commerce ingestion system, processing 25,000+ orders/day across 3 US platforms.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Onboarding to a new regulatory regime or integrating an acquired entity means weeks of manual framework reformatting.
+        E-commerce platforms pass rich customer intent in free-text notes that logistics systems can't parse programmatically. At 25,000+ orders/day, manual processing is unscalable — ignored notes mean failed deliveries, re-attempts, and customer complaints.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">Fine-tuned NLP</span>
+          <span class="ttag ttag-violet">REST API</span>
+          <span class="ttag ttag-slate">E-commerce · Logistics</span>
+        </div>
+        <span class="tool-signal">→ AI PM · Logistics</span>
+      </div>
+    </article>
+
+    <!-- Tool 3: RiskBridge -->
+    <article class="tool-card" data-tags="ai-governance,product,genai">
+      <span class="ghost" aria-hidden="true">Bridge</span>
+      <div class="tool-icon">🔗</div>
+      <h3 class="tool-name">RiskBridge</h3>
+      <p class="tool-desc">AI-powered ERM framework translator — maps risk control inventories between COSO, ISO 31000, and proprietary internal templates, surfacing coverage gaps and unmapped controls in translation. Built from repeated experience at Deloitte where client onboarding to new regulatory regimes required weeks of manual framework reconciliation with gaps routinely missed under time pressure.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Every new regulatory regime or entity integration triggers the same problem — a risk framework that works in one context needs re-expressing in another. Manual translation is slow, inconsistent, and gap-prone.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
           <span class="ttag ttag-violet">React</span>
           <span class="ttag ttag-violet">Claude API</span>
-          <span class="ttag ttag-slate">ERM</span>
+          <span class="ttag ttag-slate">COSO · ISO 31000</span>
         </div>
         <span class="tool-signal">→ Reg Compliance</span>
       </div>
     </article>
 
-    <!-- Tool 3: RiskSpeak -->
+    <!-- Tool 4: RiskSpeak -->
     <article class="tool-card" data-tags="ai-governance,product,genai,fincrime">
       <span class="ghost" aria-hidden="true">Speak</span>
-      <div class="tool-icon" aria-hidden="true">💬</div>
+      <div class="tool-icon">💬</div>
       <h3 class="tool-name">RiskSpeak</h3>
-      <p class="tool-desc">Audience-aware compliance language translator — same finding rewritten for Product, Legal, and Engineering stakeholders.</p>
+      <p class="tool-desc">Rewrites the same compliance finding for three audiences simultaneously — Product (business impact framing), Engineering (system scope and technical specificity), and Legal (regulatory citation and liability framing). Built from 4+ years of observing compliance findings deprioritised at Deloitte and CoinSwitch because regulatory language didn't translate across organisational functions.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Regulatory language gets ignored by product and engineering teams. The finding is real; the framing loses the room.
+        Compliance findings written in regulatory language get ignored by product and engineering teams — not because the risk isn't real, but because the framing doesn't connect to how those teams evaluate work.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
@@ -568,123 +589,123 @@ a:focus-visible,button:focus-visible{
       </div>
     </article>
 
-    <!-- Tool 4: AI Model Risk Assessor -->
-    <article class="tool-card" data-tags="ai-governance,rag">
-      <span class="ghost" aria-hidden="true">Assess</span>
-      <div class="tool-icon" aria-hidden="true">🧠</div>
-      <h3 class="tool-name">AI Model Risk Assessor</h3>
-      <p class="tool-desc">Structured risk assessment tool for AI models deployed in regulated environments — bias auditing, explainability scoring, and control mapping against SR 11-7 and EU AI Act.</p>
+    <!-- Tool 5: Event Disruption Planner -->
+    <article class="tool-card" data-tags="logistics,product,automation">
+      <span class="ghost" aria-hidden="true">Disrupt</span>
+      <div class="tool-icon">🗓️</div>
+      <h3 class="tool-name">Event Disruption Planner</h3>
+      <p class="tool-desc">Input any scheduled event — name, city, venue, dates, expected footfall — and the tool outputs a structured disruption plan: affected zip codes, recommended pickup redistribution windows, driver reallocation suggestions, and a day-by-day operational timeline. Built from the event-aware ML architecture at FedEx that integrated FIFA World Cup 2026 match schedules, Super Bowl LIX street closures, Thanksgiving surge signals, and Mardi Gras permit data — without retraining the model for each new event.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Compliance teams lack a structured framework for assessing ML model risk before production deployment — especially for black-box models in credit and fraud decisioning.
+        Logistics ops teams plan for major events reactively — rerouting on the day when congestion is already affecting pickups. Structured event data ingested weeks in advance allows proactive load redistribution before disruption occurs.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">Event-aware ML</span>
+          <span class="ttag ttag-violet">Schedule Ingestion</span>
+          <span class="ttag ttag-slate">Logistics Ops</span>
+        </div>
+        <span class="tool-signal">→ AI PM · Logistics</span>
+      </div>
+    </article>
+
+    <!-- Tool 6: AI Model Risk Assessor -->
+    <article class="tool-card" data-tags="ai-governance,rag">
+      <span class="ghost" aria-hidden="true">Assess</span>
+      <div class="tool-icon">🧠</div>
+      <h3 class="tool-name">AI Model Risk Assessor</h3>
+      <p class="tool-desc">Structured pre-deployment risk assessment for ML models in regulated environments. Ingests model metadata and maps it against SR 11-7, EU AI Act risk tiers, RBI/SEBI AI guidelines, and a configurable internal governance policy layer. Outputs a risk tier, control gap report, required mitigations, and sign-off checklist. Built from direct experience owning ML model deployment decisions at CoinSwitch (CRR engine, KYC scoring) and FedEx (NLP ingestion, route optimization).</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        ML models were reaching production at regulated platforms without documented bias assessments, explainability reviews, or regulatory control mapping — creating latent audit exposure with no structured pre-deployment gate.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
           <span class="ttag ttag-violet">RAG</span>
           <span class="ttag ttag-violet">ML Eval</span>
-          <span class="ttag ttag-slate">EU AI Act</span>
+          <span class="ttag ttag-slate">SR 11-7 · EU AI Act · RBI</span>
         </div>
         <span class="tool-signal">→ AI Governance</span>
       </div>
     </article>
 
-    <!-- Tool 5: RegWatch -->
-    <article class="tool-card" data-tags="ai-governance,fincrime,rag,genai">
-      <span class="ghost" aria-hidden="true">Watch</span>
-      <div class="tool-icon" aria-hidden="true">📡</div>
-      <h3 class="tool-name">RegWatch</h3>
-      <p class="tool-desc">Automated regulatory change monitor — ingests FCA, RBI, MAS, and FinCEN feeds, surfaces material changes, and generates a plain-language impact summary per product area.</p>
+    <!-- Tool 7: Route Optimization Explainer -->
+    <article class="tool-card" data-tags="logistics,product,rag">
+      <span class="ghost" aria-hidden="true">Route</span>
+      <div class="tool-icon">🗺️</div>
+      <h3 class="tool-name">Route Optimization Explainer</h3>
+      <p class="tool-desc">Demonstrates ML-driven route re-sequencing with a side-by-side comparison of naive append-to-end routing vs. ML-optimized sequencing — showing total distance, estimated time, time-window violations, and cost difference. Built from the FedEx ML route engine that delivered ~30% cost reduction and 10–15% on-time improvement across US and Canada.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Compliance teams manually scan 10+ regulatory sources weekly. Material changes slip through or arrive too late to affect roadmap planning.
+        The business case for ML route optimization is hard to communicate to ops leadership without a concrete before/after demonstration. A structured comparison closes the explanation gap and accelerates stakeholder buy-in for ML implementation in logistics contexts.
+      </div>
+      <div class="tool-footer">
+        <div class="tool-tags">
+          <span class="ttag ttag-violet">ML Sequencing</span>
+          <span class="ttag ttag-violet">Before/After Analysis</span>
+          <span class="ttag ttag-slate">Last-mile · Logistics</span>
+        </div>
+        <span class="tool-signal">→ AI PM · Logistics</span>
+      </div>
+    </article>
+
+    <!-- Tool 8: RegWatch -->
+    <article class="tool-card" data-tags="ai-governance,fincrime,rag,genai">
+      <span class="ghost" aria-hidden="true">Watch</span>
+      <div class="tool-icon">📡</div>
+      <h3 class="tool-name">RegWatch</h3>
+      <p class="tool-desc">Automated regulatory change monitor on a RAG pipeline — ingests FIU-IND, RBI, and SEBI publications, detects material changes against indexed baseline guidance, and generates plain-language impact summaries mapped to product areas (onboarding, transaction monitoring, reporting, CRR). Built from the experience of tracking the 2023 FIU-IND VDA regulations at CoinSwitch — where being first to act became a first-mover GTM advantage.</p>
+      <div class="tool-problem">
+        <strong>Problem solved</strong>
+        Indian fintech and crypto compliance teams monitor regulatory sources manually and reactively. When the 2023 VDA regulations landed, platforms that tracked them early had weeks of product response runway. Platforms that didn't were in remediation mode.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
           <span class="ttag ttag-violet">RAG Pipeline</span>
-          <span class="ttag ttag-violet">Gemini API</span>
-          <span class="ttag ttag-slate">Multi-regulator</span>
+          <span class="ttag ttag-violet">Claude API</span>
+          <span class="ttag ttag-slate">FIU-IND · RBI · SEBI</span>
         </div>
         <span class="tool-signal">→ Reg Compliance</span>
       </div>
     </article>
 
-    <!-- Tool 6: KYC Explainer -->
-    <article class="tool-card" data-tags="fincrime,rag,ai-governance">
-      <span class="ghost" aria-hidden="true">Explain</span>
-      <div class="tool-icon" aria-hidden="true">🔍</div>
-      <h3 class="tool-name">KYC Decision Explainer</h3>
-      <p class="tool-desc">Generates human-readable explanations for ML-driven KYC accept/reject decisions — with feature attribution, confidence scoring, and regulator-ready audit trails.</p>
+    <!-- Tool 9: Payment Flow Failure Analyzer -->
+    <article class="tool-card" data-tags="logistics,product,genai">
+      <span class="ghost" aria-hidden="true">Diagnose</span>
+      <div class="tool-icon">💳</div>
+      <h3 class="tool-name">Payment Flow Failure Analyzer</h3>
+      <p class="tool-desc">Input a failure pattern — decline code, frequency, payment method, geography, time window — and the tool surfaces likely root causes, maps them to the relevant payment stack layer (authorization, settlement, reconciliation), and outputs a prioritised remediation checklist. Built from the FedEx payment flow redesign that delivered a 28% improvement in payment success rates across 57 jurisdictions processing 1.5M+ daily events.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        ML-powered KYC systems produce decisions without explanations — making it impossible to justify outcomes to regulators or customers under GDPR and PSD2.
+        Payment failure diagnosis in complex multi-jurisdiction platforms is slow and expertise-dependent. At scale, patterns representing significant revenue leakage are invisible without structured diagnostic tooling — and fixing them shouldn't require a senior payments engineer every time.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
-          <span class="ttag ttag-violet">XAI</span>
-          <span class="ttag ttag-violet">LLM API</span>
-          <span class="ttag ttag-slate">GDPR</span>
+          <span class="ttag ttag-violet">Claude API</span>
+          <span class="ttag ttag-violet">Generative AI</span>
+          <span class="ttag ttag-slate">57 Jurisdictions</span>
         </div>
-        <span class="tool-signal">→ KYC / AML</span>
+        <span class="tool-signal">→ Payments PM</span>
       </div>
     </article>
 
-    <!-- Tool 7: GenAI Policy Checker -->
-    <article class="tool-card" data-tags="ai-governance,genai,product">
-      <span class="ghost" aria-hidden="true">Policy</span>
-      <div class="tool-icon" aria-hidden="true">📋</div>
-      <h3 class="tool-name">GenAI Policy Checker</h3>
-      <p class="tool-desc">Validates AI use cases against an organisation's acceptable use policy — flags prohibited patterns, data handling risks, and model governance gaps before deployment.</p>
+    <!-- Tool 10: Cross-Border Shipment Compliance Checker -->
+    <article class="tool-card" data-tags="logistics,ai-governance,product">
+      <span class="ghost" aria-hidden="true">Comply</span>
+      <div class="tool-icon">🌐</div>
+      <h3 class="tool-name">Cross-Border Shipment Compliance Checker</h3>
+      <p class="tool-desc">Input origin, destination, commodity type, declared value, and shipper profile — the tool validates against customs requirements, prohibited goods classifications, duty thresholds, and address-level regulatory constraints for the relevant jurisdiction pair. Flags compliance gaps and missing documentation before booking. Built from embedding compliance rules across 57 jurisdictions in the FedEx shipment booking flow without increasing customer-facing friction.</p>
       <div class="tool-problem">
         <strong>Problem solved</strong>
-        Teams adopt GenAI tools ad hoc without policy review. By the time compliance catches up, the tool is embedded in workflows and remediation is costly.
+        Cross-border compliance gaps in the booking flow result in shipment holds, customs delays, and regulatory penalties. Validating at the point of booking — not at the point of shipment — prevents downstream failures and reduces exception handling volume significantly.
       </div>
       <div class="tool-footer">
         <div class="tool-tags">
-          <span class="ttag ttag-violet">Prompt Eng.</span>
-          <span class="ttag ttag-violet">OpenAI API</span>
-          <span class="ttag ttag-slate">AI Governance</span>
+          <span class="ttag ttag-violet">AI Validation</span>
+          <span class="ttag ttag-violet">Rules Engine</span>
+          <span class="ttag ttag-slate">Customs · 57 Jurisdictions</span>
         </div>
-        <span class="tool-signal">→ AI Governance PM</span>
-      </div>
-    </article>
-
-    <!-- Tool 8: LinkedIn Job Bot -->
-    <article class="tool-card" data-tags="automation,genai">
-      <span class="ghost" aria-hidden="true">Apply</span>
-      <div class="tool-icon" aria-hidden="true">⚡</div>
-      <h3 class="tool-name">LinkedIn Job Bot</h3>
-      <p class="tool-desc">End-to-end job application pipeline — keyword search, AI fit scoring (0–100), tailored answer generation per JD, and Easy Apply submission with human-like pacing.</p>
-      <div class="tool-problem">
-        <strong>Problem solved</strong>
-        Senior candidates can't scale personalised outreach. Most automation bots apply blindly — this one scores fit before committing.
-      </div>
-      <div class="tool-footer">
-        <div class="tool-tags">
-          <span class="ttag ttag-violet">Node.js</span>
-          <span class="ttag ttag-violet">Playwright</span>
-          <span class="ttag ttag-slate">Claude API</span>
-        </div>
-        <span class="tool-signal">→ Builder signal</span>
-      </div>
-    </article>
-
-    <!-- Tool 9: Resume Automation Plugin -->
-    <article class="tool-card" data-tags="automation,genai,product">
-      <span class="ghost" aria-hidden="true">Plugin</span>
-      <div class="tool-icon" aria-hidden="true">🔌</div>
-      <h3 class="tool-name">Resume Automation Plugin</h3>
-      <p class="tool-desc">Persistent Cowork plugin — full career profile pre-indexed, Google Drive integration, single-input DOCX output. Paste a JD, get a tailored resume.</p>
-      <div class="tool-problem">
-        <strong>Problem solved</strong>
-        Resume tailoring is high-context and repetitive. Every session required re-explaining a 10-year career history from scratch.
-      </div>
-      <div class="tool-footer">
-        <div class="tool-tags">
-          <span class="ttag ttag-violet">Cowork Plugin</span>
-          <span class="ttag ttag-violet">Drive API</span>
-          <span class="ttag ttag-slate">Workflow</span>
-        </div>
-        <span class="tool-signal">→ Product thinking</span>
+        <span class="tool-signal">→ Reg PM · Logistics</span>
       </div>
     </article>
 
@@ -1106,20 +1127,17 @@ a:focus-visible,button:focus-visible{
 </footer>
 
 <script>
-// Filterable tools grid
+// ── Filter logic ──
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.tool-card');
-
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.dataset.filter;
     cards.forEach(card => {
-      if (filter === 'all') {
-        card.classList.remove('dimmed');
-      } else {
+      if(filter === 'all'){card.classList.remove('dimmed');}
+      else{
         const tags = card.dataset.tags.split(',');
         card.classList.toggle('dimmed', !tags.includes(filter));
       }
