@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhimanyu Sharma — Risk & Compliance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #F8F7F4;
+    --ink:      #1A1917;
+    --ink-mid:  #4A4843;
+    --ink-soft: #888680;
+    --blue:     #1B3A5C;
+    --blue-lt:  #E8EEF4;
+    --amber:    #C97D2E;
+    --amber-lt: #F5EDE0;
+    --rule:     #E0DDD8;
+    --card-bg:  #FFFFFF;
+    --serif:    'DM Serif Display', Georgia, serif;
+    --sans:     'Inter', system-ui, sans-serif;
+    --radius:   12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(248, 247, 244, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 9rem 2.5rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--blue);
+  }
+
+  .hero-body {
+    font-size: 1.125rem;
+    color: var(--ink-mid);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  .btn-primary:hover { background: #153050; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--blue);
+    border: 1.5px solid var(--blue);
+  }
+
+  .btn-secondary:hover { background: var(--blue-lt); }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 2rem 2.5rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 0.2rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 5rem 2.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--ink-mid);
+    max-width: 520px;
+    margin-bottom: 3rem;
+    line-height: 1.65;
+  }
+
+  /* ── CASES GRID ── */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .case-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+  }
+
+  /* signature element: ghost word behind content */
+  .case-ghost {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-family: var(--serif);
+    font-size: 5.5rem;
+    font-style: italic;
+    color: var(--amber);
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .case-tag-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+  }
+
+  .tag-blue  { background: var(--blue-lt);  color: var(--blue); }
+  .tag-amber { background: var(--amber-lt); color: #7A4B18; }
+
+  .case-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+
+  .case-sub {
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .case-problem {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    border-left: 2px solid var(--amber);
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .case-problem strong {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .case-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .case-role {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-date {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    padding-top: 0.15rem;
+    font-weight: 500;
+  }
+
+  .exp-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-org {
+    font-size: 0.875rem;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-desc {
+    font-size: 0.875rem;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  .exp-metrics {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .metric-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--blue-lt);
+    color: var(--blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--blue);
+    padding: 5rem 2.5rem;
+    text-align: center;
+  }
+
+  .contact-section .section-label { color: rgba(255,255,255,0.5); }
+
+  .contact-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+  }
+
+  .contact-title em { font-style: italic; color: #F5B865; }
+
+  .contact-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--blue);
+  }
+
+  .btn-white:hover { background: #F0F4F8; }
+
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+  }
+
+  .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  footer p { font-size: 0.8rem; color: var(--ink-soft); }
+
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--blue); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1.25rem; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .stats-row { padding: 1.5rem 1.25rem; gap: 1.5rem; }
+    .section { padding: 4rem 1.25rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .exp-date { padding-top: 0; }
+    .contact-section { padding: 4rem 1.25rem; }
+    footer { padding: 1.25rem; }
+  }
+
+  /* ── FOCUS ── */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* ── REDUCED MOTION ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-name">Abhimanyu Sharma</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <p class="hero-eyebrow">Risk · Compliance · Builder</p>
+  <h1 class="hero-name">
+    I govern risk.<br>
+    <em>I also ship.</em>
+  </h1>
+  <p class="hero-body">
+    10+ years across crypto, global banking, and Big 4 advisory. I've built compliance functions from scratch — and then built the tools to run them better. Currently open to senior Risk &amp; Compliance roles in fintech and crypto.
+  </p>
+  <div class="hero-actions">
+    <a href="#work" class="btn btn-primary">See the work</a>
+    <a href="#contact" class="btn btn-secondary">Get in touch</a>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats-row" role="region" aria-label="Career highlights">
+  <div class="stat">
+    <span class="stat-num">10+</span>
+    <span class="stat-label">Years in risk</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">15M+</span>
+    <span class="stat-label">Customers governed</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">40%</span>
+    <span class="stat-label">Incident reduction</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">$600K</span>
+    <span class="stat-label">Monthly savings automated</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Jurisdictions (MAS · ASIC · RBI · FinCEN)</span>
+  </div>
+</div>
+
+<!-- WORK / CASE STUDIES -->
+<section class="section" id="work" aria-label="Portfolio case studies">
+  <p class="section-label">Built work</p>
+  <h2 class="section-title">Five tools. Five real problems.</h2>
+  <p class="section-sub">
+    Every piece here was built to solve a problem I personally ran into as a compliance practitioner — not a portfolio exercise.
+  </p>
+
+  <div class="cases-grid">
+
+    <!-- Case 01 -->
+    <article class="case-card">
+      <span class="case-ghost" aria-hidden="true">Cascade</span>
+      <div class="case-tag-row">
+        <span class="tag tag-blue">React · Claude API</span>
+        <span class="tag tag-amber">Governance</span>
+      </div>
+      <h3 class="case-title">Risk Appetite Cascade Engine</h3>
+      <p class="case-sub">Board-level risk statements that actually reach operations — with KRIs, thresholds, and escalation triggers per jurisdiction.</p>
+      <div class="case-problem">
+        <strong>The problem</strong>
+        Risk appetite frameworks are written for boards, then filed. They never cascade to operational teams with actionable metrics — making them decorative.
+      </div>
+      <div class="case-footer">
+        <span class="case-role">→ Head of Risk (Crypto)</span>
+      </div>
+    </article>
+
+    <!-- Case 02 -->
+    <article class="case-card">
+      <span class="case-ghost" aria-hidden="true">Bridge</span>
+      <div class="case-tag-row">
+        <span class="tag tag-blue">React · Claude API</span>
+        <span class="tag tag-amber">ERM · RegTech</span>
+      </div>
+      <h3 class="case-title">RiskBridge</h3>
+      <p class="case-sub">Translate risk frameworks across COSO, ISO 31000, and proprietary templates — with coverage-gap analysis.</p>
+      <div class="case-problem">
+        <strong>The problem</strong>
+        Onboarding to a new regulatory regime or integrating an acquired entity means weeks of manual framework reformatting.
+      </div>
+      <div class="case-footer">
+        <span class="case-role">→ Regulatory Compliance Manager</span>
+      </div>
+    </article>
+
+    <!-- Case 03 -->
+    <article class="case-card">
+      <span class="case-ghost" aria-hidden="true">Speak</span>
+      <div class="case-tag-row">
+        <span class="tag tag-blue">React · Claude API</span>
+        <span class="tag tag-amber">Communication</span>
+      </div>
+      <h3 class="case-title">RiskSpeak</h3>
+      <p class="case-sub">The same compliance finding, rewritten for Product, Legal, and Engineering — in the language each team actually acts on.</p>
+      <div class="case-problem">
+        <strong>The problem</strong>
+        Regulatory language gets ignored by product and engineering teams. The finding is real; the framing is wrong.
+      </div>
+      <div class="case-footer">
+        <span class="case-role">→ FinCrime Compliance Manager</span>
+      </div>
+    </article>
+
+    <!-- Case 04 -->
+    <article class="case-card">
+      <span class="case-ghost" aria-hidden="true">Apply</span>
+      <div class="case-tag-row">
+        <span class="tag tag-blue">Node.js · Playwright</span>
+        <span class="tag tag-amber">Automation</span>
+      </div>
+      <h3 class="case-title">LinkedIn Job Bot</h3>
+      <p class="case-sub">Automated job search pipeline: keyword filtering, AI fit scoring, tailored answer generation, and Easy Apply submission.</p>
+      <div class="case-problem">
+        <strong>The problem</strong>
+        Senior candidates can't scale personalised outreach without automation. Most bots apply blindly — this one scores fit before applying.
+      </div>
+      <div class="case-footer">
+        <span class="case-role">→ Builder signal</span>
+      </div>
+    </article>
+
+    <!-- Case 05 -->
+    <article class="case-card">
+      <span class="case-ghost" aria-hidden="true">Plugin</span>
+      <div class="case-tag-row">
+        <span class="tag tag-blue">Cowork · Drive API</span>
+        <span class="tag tag-amber">Workflow</span>
+      </div>
+      <h3 class="case-title">Resume Automation Plugin</h3>
+      <p class="case-sub">A persistent Cowork plugin — full profile pre-indexed, Google Drive integration, one-input DOCX output per job description.</p>
+      <div class="case-problem">
+        <strong>The problem</strong>
+        Resume tailoring is high-context, repetitive work. Every session required re-explaining the same career history from scratch.
+      </div>
+      <div class="case-footer">
+        <span class="case-role">→ Product thinking signal</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience" aria-label="Work experience">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">Where the numbers come from.</h2>
+  <p class="section-sub">
+    Every metric in the hero was earned in a real role — not estimated or extrapolated.
+  </p>
+
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <span class="exp-date">2022 – Present</span>
+      <div>
+        <p class="exp-role">Business Product Advisor — Enterprise Technology Risk (2LoD)</p>
+        <p class="exp-org">FedEx · India, Middle East, Singapore, Africa</p>
+        <p class="exp-desc">Led technology risk governance across four regions. Drove a 40% reduction in risk incidents through systematic control uplift and a $9M optimisation in pickup assignment logic.</p>
+        <div class="exp-metrics">
+          <span class="metric-pill">40% incident reduction</span>
+          <span class="metric-pill">$9M saved</span>
+          <span class="metric-pill">4 regions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">2020 – 2022</span>
+      <div>
+        <p class="exp-role">Compliance Officer / Senior Manager — FinCrime (1LoD)</p>
+        <p class="exp-org">CoinSwitch · 15M+ customer crypto platform</p>
+        <p class="exp-desc">Built and ran the compliance function from scratch on a 15M+ customer platform. Led an 18-person team, owned FIU-IND and RBI regulatory relationships, and reduced onboarding time from 96s to 42s while cutting CAC from ₹28 to ₹9.</p>
+        <div class="exp-metrics">
+          <span class="metric-pill">96s → 42s onboarding</span>
+          <span class="metric-pill">₹28 → ₹9 CAC</span>
+          <span class="metric-pill">64% drop-off reduction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">2018 – 2020</span>
+      <div>
+        <p class="exp-role">AVP — AML & Financial Crime</p>
+        <p class="exp-org">Wells Fargo</p>
+        <p class="exp-desc">Automated AML reporting workflows, saving $600K/month in operational costs. Built ML-assisted transaction monitoring triage that reduced false positive review time significantly.</p>
+        <div class="exp-metrics">
+          <span class="metric-pill">$600K/month saved</span>
+          <span class="metric-pill">$130K AML automation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">2014 – 2018</span>
+      <div>
+        <p class="exp-role">Senior Consultant / Analyst</p>
+        <p class="exp-org">Deloitte USI · PwC</p>
+        <p class="exp-desc">Advised financial services clients on risk and FinCrime compliance frameworks. Reduced red-alert incidents by 55% through process redesign at Deloitte.</p>
+        <div class="exp-metrics">
+          <span class="metric-pill">55% red-alert reduction</span>
+          <span class="metric-pill">Big 4 advisory</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact" aria-label="Contact">
+  <p class="section-label">Get in touch</p>
+  <h2 class="contact-title">
+    Open to the<br>
+    <em>right next thing.</em>
+  </h2>
+  <p class="contact-sub">
+    Senior roles in FinCrime Compliance, Crypto Risk, or Regulatory Compliance at companies where these things actually matter.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:abhimanyu@example.com" class="btn btn-white">Email me</a>
+    <a href="https://linkedin.com/in/abhimanyusharma" target="_blank" rel="noopener" class="btn btn-outline-white">LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Abhimanyu Sharma · Hyderabad, India</p>
+  <p><a href="#top">Back to top ↑</a></p>
+</footer>
+
+</body>
+</html>
